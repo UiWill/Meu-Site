@@ -24,7 +24,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
 
     <!--EmailJS-->
-    <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+
+    <script src="assets/js/emailForm.js"></script>
+
+    <script
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+  ></script>
+  <script type="text/javascript">
+    (function () {
+      emailjs.init("uo_Onfu0kyVHL2TtF");
+    })();
+  </script>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-80XVHS2NWN">
@@ -121,21 +132,22 @@
                     <h2>Envie sua mensagem</h2>
                     <form id="contact-form">
                         <label for="name">Nome*</label>
-                        <input type="text" name="name" required> <!-- Correspondente ao {{name}} no template -->
+                        <input type="text"  id="name" required> <!-- Correspondente ao {{name}} no template -->
                         
-                        <label for="whatsapp">WhatsApp*</label>
-                        <input type="tel" name="phone" required> <!-- Correspondente ao {{phone}} no template -->
+                        <label for="phone">WhatsApp*</label>
+                        <input type="text"  id="phone" required> <!-- Correspondente ao {{phone}} no template -->
                         
                         <label for="email">E-mail*</label>
-                        <input type="email" name="email" required> <!-- Correspondente ao {{email}} no template -->
+                        <input type="email"  id="email" required> <!-- Correspondente ao {{email}} no template -->
                         
                         <label for="company">Empresa (Opcional)</label>
-                        <input type="text" name="subject"> <!-- Correspondente ao {{subject}} no template -->
+                        <input type="text"  id="subject"> <!-- Correspondente ao {{subject}} no template -->
                         
                         <label for="message">Mensagem*</label>
-                        <textarea rows="5" name="message" required placeholder="Descreva um pouco do seu projeto..."></textarea> <!-- Correspondente ao {{message}} no template -->
+                        <textarea rows="5"  id="message" required placeholder="Descreva um pouco do seu projeto..."></textarea> <!-- Correspondente ao {{message}} no template -->
                         
-                        <button type="submit" class="btn">Enviar Mensagem</button>
+                       <!-- <button type="submit" class="btn">Enviar Mensagem</button>-->
+                        <button class="btn btn-primary" type="button" onclick="sendMail()">Enviar Mensagem</button>
                         <p id="form-success" class="success-message" style="display:none;">Sua mensagem foi enviada com sucesso!</p>
                     </form>
                 </div>
@@ -153,7 +165,6 @@
 
     <!--Scripts-->
     <script src="assets/js/menu.js"></script>
-    <script src="assets/js/emailForm.js"></script>
     <script src="assets/js/headerAnimation.js"></script>
     <script src="assets/js/scrollAnimation.js"></script>
     <script src="assets/js/imageScroll.js"></script>
@@ -164,7 +175,7 @@
         AOS.init();
 
         // Máscara para o campo WhatsApp
-        document.getElementById('whatsapp').addEventListener('input', function (e) {
+        document.getElementById('phone').addEventListener('input', function (e) {
             let value = e.target.value.replace(/\D/g, '');
             value = value.replace(/^(\d{2})(\d{5})(\d{4}).*/, '($1) $2-$3');
             e.target.value = value;
