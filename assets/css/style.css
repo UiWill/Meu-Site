@@ -71,7 +71,7 @@ input::-webkit-inner-spin-button {
 }
 
 :root {
-    --blue: #007BFF;
+    --blue: #7f81e7;
     --black: #050505;
     --white: #fafafa;
     --gray: #c9c9c9;
@@ -955,7 +955,7 @@ body {
 }
 
 .btn-project a:hover {
-    background-color: #0056b3;
+    background-color: #a6c7eb;
 }
 
 /* CONTACT */
@@ -1078,7 +1078,7 @@ body {
 }
 
 .redes-sociais-contato a:hover .fa-linkedin {
-    color: #0e76a8;
+    color: #859197;
 }
 
 .redes-sociais-contato a:hover .fa-tiktok {
