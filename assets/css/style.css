@@ -223,18 +223,25 @@ body {
 
 .lista-navegacao li {
     font-size: 2.5rem;
-    transition: all.3s ease;
     cursor: pointer;
     text-decoration: none;
-    padding: 5px 15px; 
-    transition: all 0.3s ease;
-    border-radius: 50%; 
-    border: 2px solid transparent;
+    padding: 5px 15px;
+    position: relative; /* Necessário para posicionar a linha */
 }
 
-.lista-navegacao li:hover {
-    color: var(--blue); 
-    border-color: var(--blue);
+.lista-navegacao li::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px; /* Espessura da linha */
+    background-color: var(--blue); /* Cor da linha */
+    transition: width 0.3s ease; /* Efeito de animação */
+}
+
+.lista-navegacao li:hover::after {
+    width: 100%; /* Faz a linha aparecer ao passar o mouse */
 }
 
 /* HOME */
