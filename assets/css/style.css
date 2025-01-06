@@ -445,8 +445,18 @@ body {
     justify-content: space-between;
 }
 
+.img-about {
+    width: 100%; /* Ocupa 100% da largura disponível */
+    height: 100%; /* Define a altura do contêiner */
+    position: relative; /* Permite posicionamento relativo */
+    overflow: hidden; /* Garante que a imagem não ultrapasse o contêiner */
+}
+
 .img-about img {
-    width: 100%;
+    width: 100%; /* Ajusta a largura para preencher o contêiner */
+    height: 100%; /* Ajusta a altura para preencher o contêiner */
+    object-fit: cover; /* Garante que a imagem preencha todo o contêiner */
+    object-position: center; /* Centraliza a imagem (vertical e horizontalmente) */
 }
 
 /* Estilos base para o ícone do chevron */
